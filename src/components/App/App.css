@@ -14,9 +14,50 @@
   font-size: 1.5em;
 }
 
+/* My attempt on Grid  */
+
+.description {
+  --gap: 8px;
+  --num-cols: 3;
+  
+
+  box-sizing: border-box;
+  padding: var(--gap);
+
+  display: grid;
+  grid-template-columns: repeat(var(--num-cols), 1fr);
+  gap: var(--gap);
+  text-align: center;
+}
+
 .likes {
+  --gap: 8px;
+  --num-cols: 3;
+  --row-height: 300px;
+
+  box-sizing: border-box;
+  padding: var(--gap);
+
+  display: grid;
+  grid-template-columns: repeat(var(--num-cols), 1fr);
+  gap: var(--gap);
   
 }
+
+.like{
+  --gap: 8px;
+  --num-cols: 3;
+  
+
+  box-sizing: border-box;
+  padding: var(--gap);
+
+  display: grid;
+  grid-template-columns: repeat(var(--num-cols), 1fr);
+  gap: var(--gap);
+  text-align: center;
+}
+
 
 .image-grid {
   --gap: 16px;
@@ -43,7 +84,6 @@
 /* .image-grid-col-2 {
   grid-column: span 2;
 }
-
 .image-grid-row-2 {
   grid-row: span 2;
 } */
@@ -55,4 +95,3 @@
     --row-height: 200px;
   }
 }
-
