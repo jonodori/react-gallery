@@ -4,7 +4,7 @@
 
 .App-header {
   text-align: center;
-  background-color: lightgray;
+  background-color: lightslategrey;
   padding: 1em;
   color: white;
   margin-bottom: 1em;
@@ -14,11 +14,9 @@
   font-size: 1.5em;
 }
 
-/* Watched a Youtube on Grid */
-
 .image-grid {
   --gap: 16px;
-  --num-cols: 4;
+  --num-cols: 3;
   --row-height: 300px;
 
   box-sizing: border-box;
@@ -51,3 +49,4 @@
     --row-height: 200px;
   }
 }
+
