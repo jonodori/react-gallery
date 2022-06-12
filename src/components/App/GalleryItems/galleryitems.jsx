@@ -1,18 +1,37 @@
 import axios from 'axios';
+import { useState } from 'react';
 
 function GalleryItems ({gallery, updateLike}){
 
+let [description, setDescription] = useState(true);
+
+function toggleDescription(){
+    if(description === false){
+        setDescription(true);
+    } else if (description === true){
+        setDescription(false);
+    }
+}
 
     return(
-        <li key ={gallery.id}>
-        <img class="image " src={gallery.path} />
-        <p>{gallery.likes}</p>
-        <button onClick = {()=> {
-         updateLike(gallery.id);
-        }
-        }>like</button>
-        </li> 
+        <div onClick = {() => {
+            toggleDescription();
+        }}>
+            {(description) ? <div class="image-grid" key ={gallery.id}>
+            <img src={gallery.path} alt="architecture" />      
+            </div> : <p>{gallery.description}</p> }
+            <div>
+            <button onClick = {()=> {
+            updateLike();
+            }
+            }>Like</button>
+
+        
+            </div>
+        </div>
+        
     )
 }
+
 
 export default GalleryItems;
