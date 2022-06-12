@@ -14,6 +14,10 @@
   font-size: 1.5em;
 }
 
+.likes {
+  
+}
+
 .image-grid {
   --gap: 16px;
   --num-cols: 3;
@@ -28,19 +32,21 @@
   gap: var(--gap);
 }
 
+
+
 .image-grid > img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-.image-grid-col-2 {
+/* .image-grid-col-2 {
   grid-column: span 2;
 }
 
 .image-grid-row-2 {
   grid-row: span 2;
-}
+} */
 
 /* Anything udner 1024px */
 @media screen and (max-width: 1024px) {

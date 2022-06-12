@@ -25,11 +25,9 @@ function App() {
             console.log(err);
         })
 }
-    function updateLike(id){
-      axios({
-        url: 'gallery/like/'+ id, 
-        method: 'PUT'
-    }).then(()=>{
+  const updateLike = (id) => {
+      axios.put(`gallery/like/${id}`)
+      .then(()=>{
         console.log('test2!');
         getGallery();
     })

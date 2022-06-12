@@ -3,7 +3,7 @@ import { useState } from 'react';
 
 function GalleryItems ({gallery, updateLike}){
 
-let [description, setDescription] = useState(true);
+let [description, setDescription] = useState(false);
 
 function toggleDescription(){
     if(description === false){
@@ -14,22 +14,28 @@ function toggleDescription(){
 }
 
     return(
+        <>
+        
         <div onClick = {() => {
             toggleDescription();
         }}>
-            {(description) ? <div class="image-grid" key ={gallery.id}>
+            {(!description) ? <div className="image-grid" key ={gallery.id}>
             <img src={gallery.path} alt="architecture" />      
-            </div> : <p>{gallery.description}</p> }
-            <div>
+            </div> : <p>{gallery.description}</p> 
+            }
+           
+        </div>
+        <div className="like-grid">
+            <p>{gallery.likes}</p>
             <button onClick = {()=> {
-            updateLike();
+            updateLike(gallery.id);          
             }
             }>Like</button>
-
+            
         
             </div>
-        </div>
-        
+            
+        </>
     )
 }
 
