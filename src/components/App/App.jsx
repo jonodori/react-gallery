@@ -2,6 +2,7 @@ import React from 'react';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import './App.css';
+// declare variable GalleryList
 import GalleryList from './GalleryList/gallerylist';
 
 
@@ -9,6 +10,7 @@ import GalleryList from './GalleryList/gallerylist';
 function App() {
   let [galleryItems, setGalleryItems] = useState([]);
 
+// Fetch data from server
   useEffect(()=> {
     getGallery();
     console.log(getGallery);
@@ -30,6 +32,9 @@ function App() {
       .then(()=>{
         console.log('test2!');
         getGallery();
+    }).catch(err => {
+      alert('error updateLike');
+      console.log(err);
     })
   }
 
@@ -41,7 +46,7 @@ function App() {
 
         <br/>
         {/* component, prop, data getting passed */}
-        <GalleryList updateLike={updateLike} gallerylist={galleryItems} />
+        <GalleryList gallerylist={galleryItems} updateLike={updateLike} />
         
 
       </div>
