@@ -8,7 +8,7 @@ function GalleryList({gallerylist, updateLike}) {
         <>
         {gallerylist.map ((gallery) =>{
             return (
-            <GalleryItems updateLike={updateLike} gallery={gallery} />
+            <GalleryItems gallery={gallery} updateLike={updateLike}  />
                 )
 
         })}
